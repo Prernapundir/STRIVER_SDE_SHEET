@@ -15,14 +15,12 @@ Time Complexity : O(n)
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-        int ans;
+        
        for(int i=0;i<nums.size();i++){
-           int val=nums[abs(nums[i])-1];
-           if(val<0){
-               ans=abs(nums[i]);
-           }
-           nums[abs(nums[i])-1]*=-1;
+           int val=abs(nums[i]);
+           if(nums[val-1]<0) return val;
+           nums[val-1]*=-1;
        }
-        return ans;
+       return -1;
     }
 };
