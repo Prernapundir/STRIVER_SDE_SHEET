@@ -15,7 +15,7 @@ Steps to rotate image by 90 degree :
 2. Then reverse each row 
 
 Another way of doing , also we can do ,
-1. Reverse the matrix first
+1. Reverse the matrix first up to down
  [                       [
  [1,2,3]                 [7,8,9]
  [4,5,6]   Reverse =>    [4,5,6]
