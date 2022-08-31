@@ -1,7 +1,7 @@
 /*
 /*
 
-Approach : Without using extra space
+Approach 1 : Without using extra space : Insertion Sort
 
 1. Iterate the array1 , and whenever we get any value greater than arr2[0] , swap them
 2. Now rearramge the arr2 
