@@ -28,11 +28,42 @@ Time Complexity : O(n) -> as we are iterating half matrix only while swapping an
 
 */
 
+
+/* One way */
+
 class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
         int n=matrix.size();
         reverse(matrix.begin(),matrix.end());
+
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+        
+    }
+};
+
+/* 2nd way , with own reverse method */
+
+class Solution {
+public:
+    // Reverse method up to down ~ reverse(matrix.begin(),matrix.end())
+    
+    void reverse(vector<vector<int>>& matrix){
+        int n=matrix.size();
+         for(int i=0;i<n/2;i++){
+            for(int j=0;j<n;j++){
+                swap(matrix[n-i-1][j],matrix[i][j]);
+            }
+        }
+    }
+    
+    void rotate(vector<vector<int>>& matrix) {
+        int n=matrix.size();
+        reverse(matrix);
 
         for(int i=0;i<n;i++){
             for(int j=i+1;j<n;j++){
